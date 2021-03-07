@@ -6,7 +6,7 @@
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 12:07:11 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/07 12:18:33 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/07 14:42:03 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	int nbr;
+	unsigned int nbr;
 
 	if (nb < 0)
 	{
