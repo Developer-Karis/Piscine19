@@ -1,0 +1,5 @@
+Credentials cache: API:F71D2B01-388D-4760-BD41-F0E6F01E6889
+        Principal: kpapadop@S19.BE
+
+  Issued                Expires               Principal
+Mar  3 13:39:45 2021  Mar  3 23:39:45 2021  krbtgt/S19.BE@S19.BE
