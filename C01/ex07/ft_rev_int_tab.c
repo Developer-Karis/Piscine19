@@ -6,17 +6,21 @@
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 19:27:47 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/08 09:51:55 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/08 15:41:25 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_rev_int_tab(int *tab, int size)
 {
 	int i;
+	int temp;
 
-	i = size - 1;
-	while (i >= 0)
+	i = 0;
+	while (i < size / 2)
 	{
-		i--;
+		temp = tab[i];
+		tab[i] = tab[size - i - 1];
+		tab[size - i - 1] = temp;
+		i++;
 	}
 }
