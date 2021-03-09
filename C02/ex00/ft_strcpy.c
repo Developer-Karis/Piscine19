@@ -6,25 +6,19 @@
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 11:28:32 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/08 16:17:02 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/09 21:10:26 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-void	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *src)
 {
-	strcpy(*dest, *src);
-}
+	int i;
 
-int		main(void)
-{
-	char str1[] = "Hello";
-	char str2[] = "World";
-
-	*ft_strcpy(str1, str2);
-	printf("%c\t", str1);
-	printf("%c\t", str2);
-	return (0);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return dest;
 }
