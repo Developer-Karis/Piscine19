@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 11:28:32 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/10 15:03:30 by kpapadop         ###   ########.fr       */
+/*   Created: 2021/03/10 13:52:30 by kpapadop          #+#    #+#             */
+/*   Updated: 2021/03/10 13:52:48 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+int		ft_str_is_numeric(char *str)
 {
 	int i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		if (str[i] >= '0' && str[i] <= '9')
+		{
+			i++;
+		}
+		else
+		{
+			return (0);
+		}
 	}
-	return (dest);
+	return (1);
 }

@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 11:28:32 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/10 15:03:30 by kpapadop         ###   ########.fr       */
+/*   Created: 2021/03/10 09:24:39 by kpapadop          #+#    #+#             */
+/*   Updated: 2021/03/10 10:40:34 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	int i;
 
 	i = 0;
 	while (src[i] != '\0')
 	{
+		src[n] = '\0';
+		dest[n] = '\0';
 		dest[i] = src[i];
 		i++;
 	}
