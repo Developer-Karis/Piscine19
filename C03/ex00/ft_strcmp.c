@@ -6,16 +6,33 @@
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 19:53:48 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/11 20:05:33 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/12 18:05:57 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strcmp(char *s1, char *s2)
 {
-	if (s1 < s2)
-		return (-1);
-	else if (s1 == s2)
-		return (0);
-	else
+	int i;
+	int diff;
+
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
+	{
+		diff = s1[i] - s2[i];
+		if (diff != 0)
+			break;
+		i++;
+	}
+	if (diff > 0)
+	{
 		return (1);
+	}
+	else if (diff < 0)
+	{
+		return (-1);
+	}
+	else if (diff == 0)
+	{
+		return (0);
+	}
 }
