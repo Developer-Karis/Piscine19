@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 19:53:48 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/13 17:07:13 by kpapadop         ###   ########.fr       */
+/*   Created: 2021/03/13 16:15:41 by kpapadop          #+#    #+#             */
+/*   Updated: 2021/03/13 16:58:51 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i;
-	int diff;
+	unsigned int i;
 
 	i = 0;
-	diff = 0;
-	while (s1[i] != '\0' || s2[i] != '\0')
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
 		if (s1[i] != s2[i])
-		{
-			diff = s1[i] - s2[i];
-			break ;
-		}
-		else
-		{
-			i++;
-		}
+			return (s1[i] - s2[i]);
+		i++;
 	}
-	return (diff);
+	return (0);
 }

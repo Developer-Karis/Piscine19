@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 19:53:48 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/13 17:07:13 by kpapadop         ###   ########.fr       */
+/*   Created: 2021/03/13 18:19:11 by kpapadop          #+#    #+#             */
+/*   Updated: 2021/03/13 18:51:55 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int i;
-	int diff;
+	int j;
 
 	i = 0;
-	diff = 0;
-	while (s1[i] != '\0' || s2[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (s1[i] != s2[i])
+		j = 0;
+		while (to_find[j] != '\0')
 		{
-			diff = s1[i] - s2[i];
-			break ;
+			if (str[i + j] != to_find[j])
+				return (str);
+			j++;
 		}
-		else
-		{
-			i++;
-		}
+		i++;
 	}
-	return (diff);
+	return (0);
 }
