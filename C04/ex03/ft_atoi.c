@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 19:26:13 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/14 14:14:13 by kpapadop         ###   ########.fr       */
+/*   Created: 2021/03/14 15:11:07 by kpapadop          #+#    #+#             */
+/*   Updated: 2021/03/14 16:10:46 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
+int		ft_atoi(char *str)
 {
 	int i;
+	int neg;
+	int num;
 
 	i = 0;
+	neg = 1;
+	num = 0;
 	while (str[i] != '\0')
 	{
-		ft_putchar(str[i]);
+		if (str[i] == '-')
+		{
+			neg *= - 1;
+		}
 		i++;
 	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10 + (str[i] - 48);
+		i++;
+	}
+	return (num * neg);
 }
