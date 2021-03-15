@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 18:19:11 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/15 16:49:23 by kpapadop         ###   ########.fr       */
+/*   Created: 2021/03/15 13:49:34 by kpapadop          #+#    #+#             */
+/*   Updated: 2021/03/15 15:30:15 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+int		ft_is_prime(int nb)
 {
 	int i;
-	int j;
+	int count;
 
-	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
+	i = 1;
+	count = 0;
+	while (i <= nb)
 	{
-		j = 0;
-		while (to_find[j] == str[i + j])
-		{
-			if (to_find[j + 1] == '\0')
-				return (str + i);
-			j++;
-		}
+		if (nb % i == 0)
+			count++;
 		i++;
 	}
-	return (0);
+	if (count == 2)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

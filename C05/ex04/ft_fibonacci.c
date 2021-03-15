@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 18:19:11 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/15 16:49:23 by kpapadop         ###   ########.fr       */
+/*   Created: 2021/03/15 12:20:09 by kpapadop          #+#    #+#             */
+/*   Updated: 2021/03/15 15:49:00 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+int		ft_fibonnaci(int index)
 {
-	int i;
-	int j;
-
-	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
-	{
-		j = 0;
-		while (to_find[j] == str[i + j])
-		{
-			if (to_find[j + 1] == '\0')
-				return (str + i);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	if (index >= 3)
+		return (ft_fibonnaci(index - 1) + ft_fibonnaci(index - 2));
+	else if (index < 0)
+		return (-1);
+	else
+		return (1);
 }
