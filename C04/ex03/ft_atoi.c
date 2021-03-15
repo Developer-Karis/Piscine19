@@ -6,31 +6,31 @@
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 15:11:07 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/14 16:10:46 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/15 18:56:42 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_atoi(char *str)
 {
 	int i;
-	int neg;
-	int num;
+	int sign = 0;
+	int countNeg;
+	int countPos;
+	int result;
 
 	i = 0;
-	neg = 1;
-	num = 0;
+	countNeg = 0;
+	countPos = 0;
+	result = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] == '-')
-		{
-			neg *= - 1;
-		}
+			countNeg++;
+			if (countNeg % 2 == 0)
+				sign *= -1;
+		if (str[i] == '+')
+			countPos++;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = num * 10 + (str[i] - 48);
-		i++;
-	}
-	return (num * neg);
+	return (result * sign);
 }
