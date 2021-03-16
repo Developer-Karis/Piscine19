@@ -6,7 +6,7 @@
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 17:28:39 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/15 15:16:27 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/16 19:16:47 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_iterative_factorial(int nb);
 int ft_recursive_factorial(int nb);
 int ft_iterative_power(int nb, int power);
 int ft_recursive_power(int nb, int power);
-int ft_fibonnaci(int index);
+int ft_fibonacci(int index);
 int ft_sqrt(int nb);
 int ft_is_prime(int nb);
 
@@ -58,11 +58,11 @@ printf("\n\033[0;33m______-----____------______-------______\033[0m\n\n");
 	printf("\n\n\033[0;35mEX03\033[0m | result => 2^7 = %d\n", ft_recursive_power(2, 7));
 printf("\n\033[0;33m______-----____------______-------______\033[0m\n\n");
 
-	printf("\033[0;35mEX04\033[0m | result => -2 = %d\n", ft_fibonnaci(-2));
-	printf("\n\n\033[0;35mEX04\033[0m | result => 0 = %d\n", ft_fibonnaci(0));
-	printf("\n\n\033[0;35mEX04\033[0m | result => 2 = %d\n", ft_fibonnaci(2));
-	printf("\n\n\033[0;35mEX04\033[0m | result => 3 = %d\n", ft_fibonnaci(3));
-	printf("\n\n\033[0;35mEX04\033[0m | result => 8 = %d\n", ft_fibonnaci(8));
+	printf("\033[0;35mEX04\033[0m | result => -2 = %d\n", ft_fibonacci(-2));
+	printf("\n\n\033[0;35mEX04\033[0m | result => 0 = %d\n", ft_fibonacci(0));
+	printf("\n\n\033[0;35mEX04\033[0m | result => 2 = %d\n", ft_fibonacci(2));
+	printf("\n\n\033[0;35mEX04\033[0m | result => 3 = %d\n", ft_fibonacci(3));
+	printf("\n\n\033[0;35mEX04\033[0m | result => 8 = %d\n", ft_fibonacci(8));
 printf("\n\033[0;33m______-----____------______-------______\033[0m\n\n");
 
 	printf("\033[0;35mEX05\033[0m | original => %f / own => %d\n", sqrt(-2), ft_sqrt(-2));

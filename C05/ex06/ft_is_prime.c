@@ -6,7 +6,7 @@
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 13:49:34 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/15 15:30:15 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/16 19:14:18 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int		ft_is_prime(int nb)
 	int i;
 	int count;
 
-	i = 1;
+	i = 2;
 	count = 0;
 	while (i <= nb)
 	{
