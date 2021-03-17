@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/15 12:20:09 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/17 17:35:19 by kpapadop         ###   ########.fr       */
+/*   Created: 2021/03/17 14:12:22 by kpapadop          #+#    #+#             */
+/*   Updated: 2021/03/17 17:33:35 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_fibonacci(int index)
+int		ft_iterative_factorial(int nb)
 {
-	if (index >= 3)
-		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
-	else if (index < 0)
-		return (-1);
-	else if (index == 0)
+	int i;
+	int result;
+
+	result = 1;
+	i = 1;
+	if (nb < 0)
 		return (0);
-	else
+	if (nb == 0 || nb == 1)
 		return (1);
+	while (i <= nb)
+	{
+		result = result * i;
+		i++;
+	}
+	return (result);
 }
