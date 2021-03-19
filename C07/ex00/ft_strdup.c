@@ -3,36 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: karis <karis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:22:53 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/19 16:44:13 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/19 20:59:24 by karis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strdup(char *src)
+char 	*ft_strdup(char *src)
 {
 	int i;
-	int malloc;
+	int len;
+	char *new;
 
 	i = 0;
-	malloc = malloc(0, sizeof(int));
-	while (str[i] != '\0')
+	len = 0;
+	while (src[len] != '\0')
+		len++;
+	new = (char*)malloc(sizeof(*new) * (len + 1)); 
+	while (i < len)
 	{
-
+		new[i] = src[i];
 		i++;
 	}
-	free(malloc);
-	return (str);
+	new[i] = '\0';
+	return (new);
 }
 
-int		main(void)
+int 	main(void)
 {
 	char test[] = "helloAtous";
 	
-	printf("%s", strdup(test), ft_strdup(test));
+	printf("%s\n", strdup(test));
+	printf("%s\n", ft_strdup(test));
 	return (0);
 }
