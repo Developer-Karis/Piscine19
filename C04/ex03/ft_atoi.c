@@ -6,7 +6,7 @@
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:46:26 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/18 19:27:17 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/20 17:00:09 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		ft_atoi(char *str)
 		result = result * 10 + (str[i] - 48);
 		i++;
 	}
-	if (count % i != 0)
+	if (count % 2 != 0)
 		result *= -1;
 	return (result);
 }
