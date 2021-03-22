@@ -6,12 +6,11 @@
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:49:08 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/21 18:24:22 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/22 17:22:59 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_strlen(char *str)
 {
@@ -25,72 +24,44 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int i;
-	int j;
 
 	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	while (src[j] != '\0')
+	while (src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
-		j++;
 	}
 	dest[i] = '\0';
 	return (dest);
 }
 
-int		return_length(char **strs, int size, char *sep)
-{
-	int i;
-	int len;
-
-	i = 0;
-	len = 0;
-	while (i < size)
-	{
-		len = len + ft_strlen(strs[i]);
-		i++;
-	}
-	len = len + (size - 1) * (ft_strlen(sep) + 1);
-	return (len);
-}
-
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
+	char	*dest;
 	int		i;
-	char	*str;
+	int		j;
 
-	if (size == 0)
-	{
-		str = malloc(sizeof(char));
-		*str = 0;
-		return (str);
-	}
-	if (!(str = malloc(sizeof(char) * return_length(strs, size, sep))))
-		return (NULL);
-	*str = 0;
 	i = 0;
+	j = 0;
+	while (i < size)
+		j += ft_strlen(strs[i++]);
+	if (size > 0)
+		j += (size - 1) * ft_strlen(sep);
+	dest = malloc((j + 1) * sizeof(char));
+	if (!dest)
+		return (NULL);
+	i = 0;
+	j = 0;
 	while (i < size)
 	{
-		ft_strcat(str, strs[i]);
-		if (i < size - 1)
-			ft_strcat(str, sep);
-		i++;
+		ft_strcpy(dest + j, strs[i]);
+		j += ft_strlen(strs[i]);
+		if (++i < size)
+			j += dest + j + ft_strlen(sep) - ft_strcpy(dest + j, sep);
 	}
-	return (str);
-}
-
-int		main(void)
-{
-	char *test[] = {"one", "two", "three"};
-
-	printf("%s", ft_strjoin(3, test, "+ "));
-	return (0);
+	dest[j] = '\0';
+	return (dest);
 }

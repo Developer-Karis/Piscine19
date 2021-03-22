@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/20 10:56:23 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/22 17:18:37 by kpapadop         ###   ########.fr       */
+/*   Created: 2021/03/22 16:25:53 by kpapadop          #+#    #+#             */
+/*   Updated: 2021/03/22 16:26:49 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		*ft_range(int min, int max)
+typedef	struct s_stock_str
 {
-	int	i;
-	int	*tab;
-
-	if (min >= max)
-		return (NULL);
-	tab = (int*)malloc(sizeof(*tab) * (max - min));
-	i = 0;
-	while (min < max)
-	{
-		tab[i] = min;
-		i++;
-		min++;
-	}
-	return (tab);
-}
+	int		size;
+	char	*str;
+	char	*copy;
+} t_stock_str;
