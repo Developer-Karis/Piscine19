@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_str.h                                     :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 16:25:53 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/22 16:26:49 by kpapadop         ###   ########.fr       */
+/*   Created: 2021/03/23 13:45:30 by kpapadop          #+#    #+#             */
+/*   Updated: 2021/03/23 13:46:27 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef	struct s_stock_str
+void	ft_swap(int *a, int *b)
 {
-	int		size;
-	char	*str;
-	char	*copy;
-} t_stock_str;
+	int swap;
+
+	swap = *a;
+	*a = *b;
+	*b = swap;
+}

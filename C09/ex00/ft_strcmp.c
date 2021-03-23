@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/20 17:56:56 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/23 16:57:41 by kpapadop         ###   ########.fr       */
+/*   Created: 2021/03/23 13:51:23 by kpapadop          #+#    #+#             */
+/*   Updated: 2021/03/23 13:52:58 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
-# include <unistd.h>
-# define EVEN(x) (x % 2) == 0
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-# define TRUE 1
-# define FALSE 0
-# define SUCCESS 0
+int		ft_strcmp(char *s1, char *s2)
+{
+	int i;
+	int diff;
 
-typedef	int		t_bool;
-#endif
+	i = 0;
+	diff = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+		{
+			diff = s1[i] - s2[i];
+			break	;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return (diff);
+}
