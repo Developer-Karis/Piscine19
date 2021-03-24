@@ -6,11 +6,9 @@
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 17:10:25 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/22 17:58:31 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/24 12:41:45 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		ft_is_prime(int nb)
 {
@@ -30,24 +28,9 @@ int		ft_is_prime(int nb)
 
 int		ft_find_next_prime(int nb)
 {
-	unsigned int i;
-	int	not_found;
-
 	if (nb < 2)
-		nb = 2;
-	i = (unsigned int)nb;
-	not_found = 1;
-	while (not_found)
-	{
-		if (ft_is_prime(i))
-			return (i);
-		i++;
-	}
-	return (0);
-}
-
-int		main(void)
-{
-	printf("%d", ft_find_next_prime(-2147483643));
-	return (0);
+		return (2);
+	while (!(ft_is_prime(nb)))
+		nb++;
+	return (nb);
 }
