@@ -6,7 +6,7 @@
 /*   By: kpapadop <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 13:51:23 by kpapadop          #+#    #+#             */
-/*   Updated: 2021/03/23 13:52:58 by kpapadop         ###   ########.fr       */
+/*   Updated: 2021/03/25 14:07:06 by kpapadop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_strcmp(char *s1, char *s2)
 		if (s1[i] != s2[i])
 		{
 			diff = s1[i] - s2[i];
-			break	;
+			break ;
 		}
 		else
 		{

@@ -6,11 +6,9 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 13:53:32 by kpapadop          #+#    #+#              #
-#    Updated: 2021/03/24 21:06:09 by marvin           ###   ########.fr        #
+#    Updated: 2021/03/25 13:09:39 by kpapadop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 gcc -c -Wall -Werror -Wextra *.c
 ar rc libft.a *.o
-rm -f *.o
-ranlib libft.a
